@@ -64,7 +64,7 @@ Manify is an innovative web application that:
 
 Watch our demo video: [Insert Demo Video Link or GIF]
 
-Try the live demo here: [www.manify.us](manify.us)
+Try the live demo here: [manify.us](www.manify.us)
 
 ---
 
