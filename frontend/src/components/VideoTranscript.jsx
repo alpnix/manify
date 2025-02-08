@@ -116,9 +116,13 @@ And that's all there is to it! The Power Rule - simple, elegant, and incredibly 
       <div className="flex gap-4 h-4/5">
         <div className="w-4/5">
           <div className="w-full aspect-video bg-black rounded-lg">
-          <video controls className='w-full h-full object-contain'>
-            <source src={"/videos/power rule.mp4"} type="video/mp4" />
-            Your browser does not support the video tag.
+          <video 
+            ref={videoRef} 
+            controls 
+            className="w-full h-full object-contain"
+          >
+          <source src={video} type="video/mp4" />
+          Your browser does not support the video tag.
           </video>
           </div>
         </div>
