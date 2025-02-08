@@ -64,12 +64,8 @@ And that's all there is to it! The Power Rule - simple, elegant, and incredibly 
       setTranscript(youtubeTranscripts[randomIndex]);
     }, 3000);
     setPastPrompts(newPrompts);
-<<<<<<< HEAD
-  };
-=======
     setLoading(false);
-  }
->>>>>>> 265386eac6af3f5ecd884c597e890f9fbddb4c7b
+  };
 
   const onPromptSelect = (prompt) => {
     setPrompt(prompt.prompt);
@@ -96,12 +92,8 @@ And that's all there is to it! The Power Rule - simple, elegant, and incredibly 
   };
 
   return (
-<<<<<<< HEAD
-    <div className="flex flex-col h-screen bg-dark text-white">
-=======
     <div className="flex flex-col h-screen text-white">
       {/* Navbar at the very top, wrapped in a full-width container */}
->>>>>>> 265386eac6af3f5ecd884c597e890f9fbddb4c7b
       <div className="w-full">
         <Navbar />
       </div>
