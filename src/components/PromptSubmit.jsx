@@ -37,7 +37,7 @@ const TopSection = ({ onPromptSubmit, pastPrompts, onPromptSelect }) => {
         {/* Submit Button */}
         <button
           onClick={handleSubmit}
-          className="px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 flex items-center gap-2"
+          className="px-6 py-3 bg-primary text-white rounded-md hover:bg-primary-800 flex items-center gap-2"
         >
           <Send className="w-4 h-4" />
           Generate
