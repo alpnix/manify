@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from "../components/Navbar";
 import UploadButton from "../components/UploadButton";
-import Loading from "../components/Loading";
 import { File, Trash2, Download } from 'lucide-react';
 
 const Documents = () => {
@@ -36,8 +35,6 @@ const Documents = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-
-      < Loading />
       
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-wrap gap-6 items-start justify-center">
