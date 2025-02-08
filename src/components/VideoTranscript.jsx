@@ -1,0 +1,30 @@
+import React from 'react';
+
+const VideoSection = ({ video, transcript }) => {
+  if (!video) return null;
+
+  return (
+    <div className="container mx-auto px-4 mt-6">
+      <div className="flex gap-4">
+        {/* Video Container - 80% */}
+        <div className="w-4/5">
+          <div className="w-full aspect-video bg-black rounded-lg">
+            <video
+              src={video}
+              controls
+              className="w-full h-full object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Transcript Container - 20% */}
+        <div className="w-1/5 p-4 bg-gray-50 rounded-lg overflow-y-auto max-h-[calc(100vh-20rem)]">
+          <h3 className="text-lg font-semibold mb-2">Transcript</h3>
+          <p className="text-gray-700">{transcript}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default VideoSection;
