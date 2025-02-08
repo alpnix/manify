@@ -11,7 +11,23 @@ const MainPage = ({}) => {
   const [pastPrompts, setPastPrompts] = useState(localStorage.getItem('pastPrompts') ? JSON.parse(localStorage.getItem('pastPrompts')) : []);
 
   const youtubeVideos = ["https://www.youtube.com/embed/LPZh9BOjkQs"];
-  const youtubeTranscripts = ["good video"] 
+  const youtubeTranscripts = [`
+  Imagine you happen across a short movie script that
+0:03 \n
+describes a scene between a person and their AI assistant.
+0:07 \n
+The script has what the person asks the AI, but the AI's response has been torn off.
+0:13 \n
+Suppose you also have this powerful magical machine that can take
+0:16 \n
+any text and provide a sensible prediction of what word comes next.
+0:21 \n
+You could then finish the script by feeding in what you have to the machine,
+0:25 \n
+seeing what it would predict to start the AI's answer,
+0:28 \n
+and then repeating this over and over with a growing script completing the dialogue.
+  `] 
 
 
   const onPromptSubmit = (prompt) => {
