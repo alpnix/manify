@@ -117,6 +117,7 @@ And that's all there is to it! The Power Rule - simple, elegant, and incredibly 
         <div className="w-4/5">
           <div className="w-full aspect-video bg-black rounded-lg">
           <video 
+            autoPlay={true}
             ref={videoRef} 
             controls 
             className="w-full h-full object-contain"

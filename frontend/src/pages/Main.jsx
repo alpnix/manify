@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import VideoSection from '../components/VideoTranscript';
+import Loading from '../components/Loading';
 import { Send, Trash2 } from 'lucide-react';
 
 const MainPage = () => {
@@ -47,6 +48,10 @@ Remember, whenever you see a variable raised to a power, the Power Rule is your 
 1:30
 And that's all there is to it! The Power Rule - simple, elegant, and incredibly useful. Thanks for watching!`];
 
+  useEffect(() => {
+    console.log("Loading state changed:", loading);
+  }, [loading]);
+
   const onPromptSubmit = (prompt) => {
     const newPrompt = {
       id: Date.now(),
@@ -55,6 +60,7 @@ And that's all there is to it! The Power Rule - simple, elegant, and incredibly 
     const newPrompts = [newPrompt, ...pastPrompts];
     localStorage.setItem('pastPrompts', JSON.stringify(newPrompts));
     setLoading(true);
+    console.log("Prompt is submitted: " + loading);
     setTimeout(() => {
       const randomIndex = Math.floor(
         Math.random() * Math.min(youtubeVideos.length, youtubeTranscripts.length)
@@ -62,9 +68,8 @@ And that's all there is to it! The Power Rule - simple, elegant, and incredibly 
       setVideo(youtubeVideos[randomIndex]);
       setTranscript(youtubeTranscripts[randomIndex]);
       setLoading(false);
-    }, 3000);
+    }, 5000);
     setPastPrompts(newPrompts);
-    setLoading(false);
   };
 
   const onPromptSelect = (prompt) => {
@@ -126,7 +131,7 @@ And that's all there is to it! The Power Rule - simple, elegant, and incredibly 
                 ))}
               </div>
             )}
-            {loading && <p className="text-gray-400 text-center mt-4">Loading...</p>}
+            
           </div>
         )}
 
@@ -136,7 +141,13 @@ And that's all there is to it! The Power Rule - simple, elegant, and incredibly 
               <VideoSection video={video} transcript={transcript} />
             ) : (
               <div className="flex flex-1 items-center justify-center">
-                <p className="text-gray-400">Submit a prompt to generate a video.</p>
+                {
+                  loading ? (
+                    <Loading />
+                  ) : (
+                    <p className="text-gray-400">Submit a prompt to generate a video.</p>
+                  )
+                }
               </div>
             )}
           </div>
