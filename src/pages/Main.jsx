@@ -1,21 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../App.css";
-
 import Navbar from "../components/Navbar";
+import TopSection from "../components/PromptSubmit";
+import VideoSection from "../components/VideoTranscript";
 
 const Main = () => {
+  const [pastPrompts, setPastPrompts] = useState([]);
+  const [selectedPrompt, setSelectedPrompt] = useState(null);
 
-    return (
-        <div className="min-h-screen justify-center bg-dark">
-        <Navbar />
-        <h1 className="text-4xl font-bold text-primary">
-          Main Page
-        </h1>
-        <p className="mt-4 text-gray-700 text-secondary">
-          This is a basic template to get you started.
-        </p>
-      </div>
-    );
-}
+  const handlePromptSubmit = async (prompt) => {
+    // Here you would typically make an API call to generate the video
+    // For now, we'll simulate it with a new prompt object
+    const newPrompt = {
+      id: Date.now(),
+      prompt: prompt,
+      video: `/api/videos/${Date.now()}`, // This would be your actual video URL
+      transcript: `Transcript for: ${prompt}` // This would be your actual transcript
+    };
+    
+    setPastPrompts([newPrompt, ...pastPrompts]);
+    setSelectedPrompt(newPrompt);
+  };
+
+  return (
+    <div className="min-h-screen bg-dark">
+      <Navbar />
+      
+      <TopSection 
+        onPromptSubmit={handlePromptSubmit}
+        pastPrompts={pastPrompts}
+        onPromptSelect={setSelectedPrompt}
+      />
+      
+      <VideoSection 
+        video={selectedPrompt?.video}
+        transcript={selectedPrompt?.transcript}
+      />
+    </div>
+  );
+};
 
 export default Main;
