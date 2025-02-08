@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="flex justify-center">
         <a href="/">
           <img 
-            src="/manify.png" 
+            src="/manify_logo.png" 
             alt="Manify Logo" 
             className="h-12" 
           />

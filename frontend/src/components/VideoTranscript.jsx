@@ -9,11 +9,10 @@ const VideoSection = ({ video, transcript }) => {
         {/* Video Container - 80% */}
         <div className="w-4/5">
           <div className="w-full aspect-video bg-black rounded-lg">
-            <iframe
-              src={video}
-              controls
-              className="w-full h-full object-contain"
-            ></iframe>
+          <video controls className='w-full h-full object-contain'>
+            <source src={"/videos/power_rule.mp4"} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           </div>
         </div>
 

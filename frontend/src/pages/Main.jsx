@@ -10,7 +10,7 @@ const MainPage = ({}) => {
   const [prompt, setPrompt] = useState('');
   const [pastPrompts, setPastPrompts] = useState(localStorage.getItem('pastPrompts') ? JSON.parse(localStorage.getItem('pastPrompts')) : []);
 
-  const youtubeVideos = ["https://www.youtube.com/embed/LPZh9BOjkQs"];
+  const youtubeVideos = ["localhost:3000/public/videos/manim video.mp4"];
   const youtubeTranscripts = [`
   Imagine you happen across a short movie script that
 0:03 \n
@@ -27,7 +27,7 @@ You could then finish the script by feeding in what you have to the machine,
 seeing what it would predict to start the AI's answer,
 0:28 \n
 and then repeating this over and over with a growing script completing the dialogue.
-  `] 
+  `]
 
 
   const onPromptSubmit = (prompt) => {
