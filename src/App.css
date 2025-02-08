@@ -40,3 +40,14 @@
     transform: rotate(360deg);
   }
 }
+
+hr {
+  background-color: aqua;
+  color: aqua;
+  border: #61dafb 1px solid;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}

@@ -2,6 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
+    <>
     <nav className="mx-auto grid grid-cols-3 items-center px-48 py-4 bg-white shadow-md">
       {/* Left Section: About */}
       <div className="flex justify-start">
@@ -34,6 +35,8 @@ const Navbar = () => {
         </a>
       </div>
     </nav>
+    <hr />
+    </>
   );
 };
 

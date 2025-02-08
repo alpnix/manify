@@ -22,7 +22,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-dark">
       <Navbar />
       
       <div className="container mx-auto px-4 py-12">
@@ -38,8 +38,8 @@ const About = () => {
         </div>
 
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">About Our Platform</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <h2 className="text-3xl font-bold mb-6 text-primary">About Our Platform</h2>
+          <p className="text-lg text-white leading-relaxed">
             We are revolutionizing Mathematics tutoring through cutting-edge AI visual creator agent. 
             Our platform specializes in digitalizing Mathematics tutoring by leveraging advanced AI agents 
             that provide comprehensive visual descriptions and explanations. This innovative approach 
