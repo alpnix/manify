@@ -12,7 +12,7 @@ def speak(text):
 
     data = client.tts.bytes(
         model_id="sonic-preview",
-        transcript="One way to think about the function e to the t is to ask what properties does it have?",
+        transcript=text,
         voice_id="3790cf58-070e-48ec-8dbe-6a037065b413",  # Barbershop Man
         # You can find the supported `output_format`s at https://docs.cartesia.ai/api-reference/tts/bytes
         output_format={
