@@ -25,9 +25,9 @@ const UploadButton = ({ onFileSelect }) => {
       {/* Plus Button */}
       <div 
         onClick={() => setIsModalOpen(true)}
-        className="w-16 h-16 border-2 border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:bg-gray-50"
+        className="w-48 h-48 border-2 border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:bg-gray-50"
       >
-        <Plus className="w-8 h-8 text-gray-400" />
+        <Plus className="w-16 h-16 text-gray-400" />
       </div>
 
       {/* Modal */}
