@@ -14,7 +14,7 @@ const MainPage = () => {
     localStorage.getItem('pastPrompts') ? JSON.parse(localStorage.getItem('pastPrompts')) : []
   );
 
-  const youtubeVideos = ["/videos/power_rule.mp4"];
+  const youtubeVideos = ["/videos/power rule.mp4"];
   const youtubeTranscripts = [`0:00
 Welcome! Today we're going to learn about one of the most fundamental concepts in calculus: the Power Rule for derivatives. This rule helps us find the derivatives of functions with variables raised to powers.
 

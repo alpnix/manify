@@ -120,6 +120,7 @@ And that's all there is to it! The Power Rule - simple, elegant, and incredibly 
             autoPlay={true}
             ref={videoRef} 
             controls 
+            muted={false}
             className="w-full h-full object-contain"
           >
           <source src={video} type="video/mp4" />
