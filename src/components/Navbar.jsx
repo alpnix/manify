@@ -2,12 +2,12 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="grid grid-cols-3 items-center px-6 py-4 bg-white shadow-md">
+    <nav className="mx-auto grid grid-cols-3 items-center px-48 py-4 bg-white shadow-md">
       {/* Left Section: About */}
-      <div className="text-left">
+      <div className="flex justify-start">
         <a 
-          href="/about" 
-          className="text-xl text-gray-700 hover:text-gray-900 transition-colors duration-200"
+          href="/about"
+          className="text-xl font-semibold text-dark hover:text-secondary transition-colors duration-200"
         >
           About
         </a>
@@ -25,10 +25,10 @@ const Navbar = () => {
       </div>
 
       {/* Right Section: Documents */}
-      <div className="text-right">
+      <div className="flex justify-end">
         <a 
           href="/documents" 
-          className="text-xl text-gray-700 hover:text-gray-900 transition-colors duration-200"
+          className="text-xl font-semibold text-dark hover:text-secondary transition-colors duration-200"
         >
           Documents
         </a>
