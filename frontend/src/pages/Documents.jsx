@@ -4,19 +4,22 @@ import UploadButton from "../components/UploadButton";
 import { File, Trash2, Download } from 'lucide-react';
 
 const Documents = () => {
-  const [documents, setDocuments] = useState([]);
-
+  console.log("Local storage: " + localStorage.getItem('pastDocuments'))
+  const [documents, setDocuments] = useState(localStorage.getItem('pastDocuments') ? JSON.parse(localStorage.getItem('pastDocuments')) : []);
   const handleFileSelect = (file) => {
     const fileURL = URL.createObjectURL(file);
-    setDocuments([...documents, {
+    const newDocuments = [...documents, {
       name: file.name,
       type: file.type,
       url: fileURL
-    }]);
+    }];
+    localStorage.setItem('pastDocuments', JSON.stringify(newDocuments));
+    setDocuments(newDocuments);
   };
 
   const handleDelete = (index) => {
     const newDocuments = documents.filter((_, i) => i !== index);
+    localStorage.setItem('pastDocuments', JSON.stringify(newDocuments));
     setDocuments(newDocuments);
   };
 
