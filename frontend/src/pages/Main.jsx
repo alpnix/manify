@@ -10,23 +10,119 @@ const MainPage = ({}) => {
   const [prompt, setPrompt] = useState('');
   const [pastPrompts, setPastPrompts] = useState(localStorage.getItem('pastPrompts') ? JSON.parse(localStorage.getItem('pastPrompts')) : []);
 
-  const youtubeVideos = ["localhost:3000/public/videos/manim video.mp4"];
+  const youtubeVideos = ["localhost:3000/public/videos/power_rule.mp44"];
   const youtubeTranscripts = [`
-  Imagine you happen across a short movie script that
-0:03 \n
-describes a scene between a person and their AI assistant.
-0:07 \n
-The script has what the person asks the AI, but the AI's response has been torn off.
-0:13 \n
-Suppose you also have this powerful magical machine that can take
-0:16 \n
-any text and provide a sensible prediction of what word comes next.
-0:21 \n
-You could then finish the script by feeding in what you have to the machine,
-0:25 \n
-seeing what it would predict to start the AI's answer,
-0:28 \n
-and then repeating this over and over with a growing script completing the dialogue.
+  0:00
+Imagine you're learning about the power rule in derivatives, and you're working through the example 
+𝑓
+(
+𝑥
+)
+=
+𝑥
+3
+f(x)=x 
+3
+ .
+
+0:05
+You know the Power Rule says that if 
+𝑓
+(
+𝑥
+)
+=
+𝑥
+𝑛
+f(x)=x 
+n
+ , the derivative is 
+𝑓
+′
+(
+𝑥
+)
+=
+𝑛
+⋅
+𝑥
+𝑛
+−
+1
+f 
+′
+ (x)=n⋅x 
+n−1
+ .
+
+0:12
+So, for our function, 
+𝑓
+(
+𝑥
+)
+=
+𝑥
+3
+f(x)=x 
+3
+ , we apply the Power Rule. First, we look at the exponent, which is 3.
+
+0:18
+Then, we bring that exponent down as a multiplier. So now we have 
+3
+⋅
+𝑥
+3
+−
+1
+3⋅x 
+3−1
+ .
+
+0:26
+Subtracting 1 from the exponent gives us 
+3
+𝑥
+2
+3x 
+2
+ , which is the derivative of 
+𝑥
+3
+x 
+3
+ .
+
+0:33
+And that’s the Power Rule in action! The derivative of 
+𝑓
+(
+𝑥
+)
+=
+𝑥
+3
+f(x)=x 
+3
+  is simply 
+3
+𝑥
+2
+3x 
+2
+ .
+
+0:39
+It's a quick and easy way to differentiate polynomials like this. Just remember: bring the exponent down and subtract 1.
+
+0:47
+This rule works for positive exponents, negative ones, and even fractional exponents. So no matter the power of 
+𝑥
+x, you can apply the Power Rule!
+
+0:56
+And that’s how you use the Power Rule to differentiate functions. Thanks for watching!
   `]
 
 
