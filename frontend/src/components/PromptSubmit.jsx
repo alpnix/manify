@@ -30,7 +30,7 @@ const TopSection = ({ onPromptSubmit, pastPrompts, onPromptSelect }) => {
           type="text"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Enter your prompt here..."
+          placeholder="Enter your prompt here... (e.g. Derivative - Power Rule)"
           className="flex-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 

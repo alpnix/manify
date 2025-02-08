@@ -143,7 +143,7 @@ and then repeating this over and over with a growing script completing the dialo
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder=""
+            placeholder="Enter your prompt here... (e.g. Derivative - Power Rule)"
             rows={2}
             className="flex-1 p-3 border border-gray-600 rounded-md bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
           />

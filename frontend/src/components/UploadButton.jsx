@@ -25,9 +25,9 @@ const UploadButton = ({ onFileSelect }) => {
       {/* Plus Button */}
       <div 
         onClick={() => setIsModalOpen(true)}
-        className="w-48 h-48 border-2 border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:bg-gray-50"
+        className="w-48 h-48 border-2 border-secondary bg-secondary bg-opacity-10 rounded-lg flex items-center justify-center cursor-pointer hover:bg-opacity-40"
       >
-        <Plus className="w-16 h-16 text-gray-400" />
+        <Plus className="w-16 h-16 text-white" />
       </div>
 
       {/* Modal */}
@@ -46,22 +46,22 @@ const UploadButton = ({ onFileSelect }) => {
                 onClick={() => handleOptionSelect('computer')}
                 className="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-100 w-full"
               >
-                <Upload className="w-5 h-5" />
-                <span>Upload from Computer</span>
+                <Upload className="w-5 h-5 text-secondary" />
+                <span className= "text-secondary">Upload from Computer</span>
               </button>
               <button
                 onClick={() => handleOptionSelect('drive')}
                 className="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-100 w-full"
               >
-                <HardDrive className="w-5 h-5" />
-                <span>Upload from Drive</span>
+                <HardDrive className="w-5 h-5 text-secondary" />
+                <span className= "text-secondary">Upload from Drive</span>
               </button>
               <button
                 onClick={() => handleOptionSelect('camera')}
                 className="flex items-center gap-2 p-3 rounded-lg hover:bg-gray-100 w-full"
               >
-                <Camera className="w-5 h-5" />
-                <span>Take Photo</span>
+                <Camera className="w-5 h-5 text-secondary" />
+                <span className= "text-secondary">Take Photo</span>
               </button>
             </div>
           </div>
