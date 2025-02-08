@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="flex justify-start">
         <a 
           href="/about"
-          className="text-xl font-semibold text-primary hover:text-secondary transition-colors duration-200"
+          className="text-xl font-semibold text-primary hover:underline transition-colors duration-200"
         >
           About
         </a>
@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="flex justify-center">
         <a href="/">
           <img 
-            src="/manify-logo.png" 
+            src="/manify.png" 
             alt="Manify Logo" 
             className="h-12" 
           />
@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="flex justify-end">
         <a 
           href="/documents" 
-          className="text-xl font-semibold text-primary hover:text-secondary transition-colors duration-200"
+          className="text-xl font-semibold text-primary hover:underline transition-colors duration-200"
         >
           Documents
         </a>
