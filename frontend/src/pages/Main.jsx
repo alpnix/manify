@@ -1,18 +1,41 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';          // Your existing Navbar component
 import VideoSection from '../components/VideoTranscript'; // Your video/transcript component
-import { Send } from 'lucide-react';
+import { Send, Trash2 } from 'lucide-react';
 
-const MainPage = ({
-  onPromptSubmit = () => {}, // Default no-op function
-  pastPrompts = [],          // Default empty array
-  onPromptSelect = () => {}, // Default no-op function
-  video,
-  transcript
-}) => {
+const MainPage = ({}) => {
+  const [video, setVideo] = useState(null);
+  const [transcript, setTranscript] = useState('');
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
   const [prompt, setPrompt] = useState('');
+  const [pastPrompts, setPastPrompts] = useState(localStorage.getItem('pastPrompts') ? JSON.parse(localStorage.getItem('pastPrompts')) : []);
+
+  const youtubeVideos = ["https://www.youtube.com/embed/LPZh9BOjkQs"];
+  const youtubeTranscripts = ["good video"] 
+
+
+  const onPromptSubmit = (prompt) => {
+    const newPrompt = {
+      id: Date.now(),
+      prompt: prompt.length > 50 ? prompt.slice(0, 50) + "..." : prompt,
+    };
+    const newPrompts = [newPrompt, ...pastPrompts];
+    localStorage.setItem('pastPrompts', JSON.stringify(newPrompts));
+    const randomIndex = Math.floor(Math.random() * Math.min(youtubeVideos.length, youtubeTranscripts.length));
+    setVideo(youtubeVideos[randomIndex]);
+    setTranscript(youtubeTranscripts[randomIndex]);
+    setPastPrompts(newPrompts);
+  }
+
+  const onPromptSelect = (prompt) => {
+    setPrompt(prompt.prompt);
+  } 
   
+  const onPromptDelete = (id) => {
+    const newPrompts = pastPrompts.filter((item) => item.id !== id);
+    localStorage.setItem('pastPrompts', JSON.stringify(newPrompts));
+    setPastPrompts(newPrompts); 
+  }
 
   const handleSubmit = () => {
     if (prompt.trim()) {
@@ -50,9 +73,21 @@ const MainPage = ({
                   <div
                     key={item.id}
                     onClick={() => onPromptSelect(item)}
-                    className="p-3 border border-gray-700 rounded-md cursor-pointer hover:bg-gray-700"
+                    className="flex items-center justify-between p-3 border border-gray-700 rounded-md cursor-pointer hover:bg-gray-700"
                   >
                     <p className="text-sm">{item.prompt}</p>
+                    <button
+                      onClick={(e) => {
+                        // Prevent triggering onPromptSelect when clicking the trash icon
+                        e.stopPropagation();
+                        e.target.parentElement.parentElement.style.display = "none";
+                        // Call onPromptDelete (ensure this prop is passed from the parent)
+                        onPromptDelete(item.id);
+                      }}
+                      className="text-gray-400 hover:text-gray-200"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
                   </div>
                 ))}
               </div>

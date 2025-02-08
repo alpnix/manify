@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <>
-    <nav className="mx-auto grid grid-cols-3 items-center px-48 py-4 bg-dark shadow-md">
+    <nav className="mx-auto grid grid-cols-3 items-center px-48 py-4 bg-dark shadow-md grid-flow-col grid-flow-row-dense">
       {/* Left Section: About */}
       <div className="flex justify-start">
         <a 
