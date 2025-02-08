@@ -10,7 +10,7 @@ const VideoSection = ({ video, transcript }) => {
         <div className="w-4/5">
           <div className="w-full aspect-video bg-black rounded-lg">
           <video controls className='w-full h-full object-contain'>
-            <source src={"/videos/power_rule.mp4"} type="video/mp4" />
+            <source src={"/videos/power rule.mp4"} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           </div>

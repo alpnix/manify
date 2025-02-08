@@ -5,6 +5,7 @@ import { Send, Trash2 } from 'lucide-react';
 
 const MainPage = ({}) => {
   const [video, setVideo] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
   const [prompt, setPrompt] = useState('');
@@ -37,10 +38,17 @@ and then repeating this over and over with a growing script completing the dialo
     };
     const newPrompts = [newPrompt, ...pastPrompts];
     localStorage.setItem('pastPrompts', JSON.stringify(newPrompts));
-    const randomIndex = Math.floor(Math.random() * Math.min(youtubeVideos.length, youtubeTranscripts.length));
-    setVideo(youtubeVideos[randomIndex]);
-    setTranscript(youtubeTranscripts[randomIndex]);
+    // Delay video and transcript selection by 2 seconds (2000ms)
+    setLoading(true);
+    setTimeout(() => {
+      const randomIndex = Math.floor(
+        Math.random() * Math.min(youtubeVideos.length, youtubeTranscripts.length)
+      );
+      setVideo(youtubeVideos[randomIndex]);
+      setTranscript(youtubeTranscripts[randomIndex]);
+    }, 3000);
     setPastPrompts(newPrompts);
+    setLoading(false);
   }
 
   const onPromptSelect = (prompt) => {
@@ -69,7 +77,7 @@ and then repeating this over and over with a growing script completing the dialo
   };
 
   return (
-    <div className="flex flex-col h-screen bg-dark text-white">
+    <div className="flex flex-col h-screen text-white">
       {/* Navbar at the very top, wrapped in a full-width container */}
       <div className="w-full">
         <Navbar />
@@ -108,6 +116,7 @@ and then repeating this over and over with a growing script completing the dialo
                 ))}
               </div>
             )}
+            {loading && <p className="text-gray-400 text-center mt-4">Loading...</p>}
           </div>
         )}
 

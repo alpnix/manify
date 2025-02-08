@@ -7,22 +7,25 @@ const About = () => {
     {
       imageSrc: "https://media.licdn.com/dms/image/v2/D4E03AQEWJrnfzUscSw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1707773722489?e=1744243200&v=beta&t=yvZwr1RVwlZCLGSaSt2oKd_nAuDXKdkXvU-c3zGACDg",
       name: "Akif Dirican",
-      role: "Computer Science & Mathematics"
+      role: "Computer Science & Mathematics", 
+      uni: "Rice University"
     },
     {
       imageSrc: "https://media.licdn.com/dms/image/v2/D4D03AQGJyhUL3xhJ-A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1693621090014?e=1744243200&v=beta&t=wwVjFRl-IzAkPPgOt-XqXiBQ8MqcX7mJOrKKJpMp7as",
       name: "Alp Niksarli",
-      role: "Computer Science & Data Science"
+      role: "Computer Science & Data Science",
+      uni: "Davidson College"
     },
     {
       imageSrc: "https://media.licdn.com/dms/image/v2/D4D03AQE0fsBbhNx1pw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727795420400?e=1744243200&v=beta&t=W5voMAUNSbFs5tu7u80gX4RBETw-o8QwYuRKEj5BxZ8",
       name: "Utkan Uygur",
-      role: "Computer Science & Machine Learning"
+      role: "Computer Science & Machine Learning", 
+      uni: "Carnegie Mellon University"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen">
       <Navbar />
       
       <div className="container mx-auto px-4 py-12">
@@ -33,6 +36,7 @@ const About = () => {
               imageSrc={member.imageSrc}
               name={member.name}
               role={member.role}
+              uni={member.uni}
             />
           ))}
         </div>
