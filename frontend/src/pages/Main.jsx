@@ -4,14 +4,15 @@ import VideoSection from '../components/VideoTranscript'; // Your video/transcri
 import { Send } from 'lucide-react';
 
 const MainPage = ({
-  onPromptSubmit,
-  pastPrompts = [], // Default empty array to avoid undefined errors
-  onPromptSelect,
+  onPromptSubmit = () => {}, // Default no-op function
+  pastPrompts = [],          // Default empty array
+  onPromptSelect = () => {}, // Default no-op function
   video,
   transcript
 }) => {
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
   const [prompt, setPrompt] = useState('');
+  
 
   const handleSubmit = () => {
     if (prompt.trim()) {
