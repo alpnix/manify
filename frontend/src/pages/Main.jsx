@@ -54,7 +54,6 @@ And that's all there is to it! The Power Rule - simple, elegant, and incredibly 
     };
     const newPrompts = [newPrompt, ...pastPrompts];
     localStorage.setItem('pastPrompts', JSON.stringify(newPrompts));
-    // Delay video and transcript selection by 2 seconds (2000ms)
     setLoading(true);
     setTimeout(() => {
       const randomIndex = Math.floor(
@@ -62,6 +61,7 @@ And that's all there is to it! The Power Rule - simple, elegant, and incredibly 
       );
       setVideo(youtubeVideos[randomIndex]);
       setTranscript(youtubeTranscripts[randomIndex]);
+      setLoading(false);
     }, 3000);
     setPastPrompts(newPrompts);
     setLoading(false);
